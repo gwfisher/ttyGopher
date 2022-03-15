@@ -47,18 +47,9 @@ var
 begin
 	client := TGopherClient.Create;
 
-	if client.Host = '' then
-		begin
-			client.Host := 'sdf.org';
-			client.Selector := '/';
-			client.Port := 70;
-		end
-		else
-		begin
-			client.Host := host;
-			client.Selector := selector;
-			client.Port := port;
-		end;
+	client.Host := host;
+	client.Selector := selector;
+	client.Port := port;
 
 	client.Get;
 
@@ -80,6 +71,7 @@ begin
 	end;
 
 	writeGopher(size);
+	client.Free;
 end;
 
 procedure getSelection(sel: integer);

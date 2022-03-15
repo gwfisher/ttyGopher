@@ -6,13 +6,13 @@ var
 	ch: char;
 	sel: integer;
 begin
-	openGopher('','',0);
-	write('Selection? ');
-	read(sel);
-	getSelection(sel);
-
+	openGopher('sdf.org','/', 70);
+	
 	repeat
-		ch:=ReadKey;
-	until ch=#27
+		write('Selection? ');
+		read(sel);
+		getSelection(sel);
 
+		ch:=ReadKey;
+	until ch=#27;
 end.
