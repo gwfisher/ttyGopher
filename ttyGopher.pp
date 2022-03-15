@@ -3,11 +3,12 @@ program ttyGopher;
 uses gopherFunctions, configFunctions, URIParser, crt;
 
 var 
+	run: integer;
 	ch: char;
 	sel: integer;
 	url: TURI;
 	uri,host,path: string;
-	port: integer;
+
 begin
 	uri := getConfigHost();
 	url := ParseURI(uri);
@@ -18,13 +19,7 @@ begin
 
 	openGopher(host , path, port); 
 
-	writeln(uri);
-
 	repeat
-		write('Selection? ');
-		read(sel);
-		getSelection(sel);
-
-		ch:=ReadKey;
+		ch := ReadKey;
 	until ch=#27;
 end.

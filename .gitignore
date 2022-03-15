@@ -1,5 +1,5 @@
 configFunctions.o
-configuFunctions.ppu
+configFunctions.ppu
 gopherFunctions.o
 gopherFunctions.ppu
 ttyGopher

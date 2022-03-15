@@ -79,11 +79,15 @@ var
 	host: string;
 	port: integer;
 	selector: string;
+	sel: integer;
+
 begin
 	host := menu.Itemhost[sel];
-	port := menu.ItemPort[sel];
+	port := menu.ItemPorr[sel];
 	selector := menu.ItemSelector[sel];
-
+	sel := 0;
+	write('Selection?');
+	read(opt);
 	openGopher(host,selector,port);
 end;
 
